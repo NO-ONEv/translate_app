@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentBottom="false"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:windowSoftInputMode="stateVisible|adjustResize">
 
 
     <ImageButton
@@ -18,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.359"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.132"
+        app:layout_constraintVertical_bias="0.118"
         app:srcCompat="@android:drawable/arrow_down_float" />
 
     <TextView
@@ -38,16 +39,17 @@
         android:id="@+id/input_text"
         android:layout_width="175dp"
         android:layout_height="150dp"
+        android:background="@drawable/edit_text_border"
         android:ems="10"
-        android:scrollbars="vertical"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301" />
+        app:layout_constraintVertical_bias="0.361" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -60,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.132"
+        app:layout_constraintVertical_bias="0.117"
         app:srcCompat="@android:drawable/arrow_down_float" />
 
     <TextView
@@ -75,22 +77,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.138" />
 
-    <EditText
+    <Button
+        android:id="@+id/translateit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Translate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.742" />
+
+    <TextView
         android:id="@+id/output_text"
         android:layout_width="175dp"
         android:layout_height="150dp"
-        android:ems="10"
-        android:scrollbars="vertical"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
+        android:background="@drawable/edit_text_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301" />
-
-
+        app:layout_constraintVertical_bias="0.361" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
