@@ -163,22 +163,36 @@ public class MainActivity extends AppCompatActivity {
                     }
                     String sent = "";
                     String val = response.body();
-                    JSONObject obj = null;
+                    JSONObject obj2 = null;
+                    JSONObject obj1 = null;
+                    JSONArray jsonArray = null;
+
                     try {
                         JSONObject json = new JSONObject(val);
                         //System.out.println(json.get("sentences"));
-                        JSONArray jsonArray = (JSONArray)json.get("sentences");
-                        obj = jsonArray.getJSONObject(0);
+                        jsonArray = (JSONArray)json.get("sentences");
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                     try {
-                        System.out.println(obj.get("trans"));
-                        out = obj.get("trans").toString();
+                        obj1 = jsonArray.getJSONObject(1);
+                        //System.out.println(obj1.get("translit"));
+
+                        out = obj1.get("translit").toString();
                         edit_output_txt.setText(out);
 
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                    }
+                    catch (JSONException e) {
+                        try {
+                            obj2 = jsonArray.getJSONObject(0);
+                            out = obj2.get("trans").toString();
+                            edit_output_txt.setText(out);
+                        }
+                        catch (JSONException ex) {
+                            ex.printStackTrace();
+                        }
+                        //System.out.println(obj2.get("trans"));
                     }
 
                     Log.d(TAG, "CAME HERE vinee" + sent);
